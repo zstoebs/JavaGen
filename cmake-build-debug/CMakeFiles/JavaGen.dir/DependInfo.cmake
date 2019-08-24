@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Zachary/Desktop/Code/JavaGen/main.cpp" "/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/JavaGen.dir/main.cpp.o"
+  "/Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp" "/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/JavaGen.dir/TextGen.cpp.o"
+  "/Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp" "/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/JavaGen.dir/javagendriver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

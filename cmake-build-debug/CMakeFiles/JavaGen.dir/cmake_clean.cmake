@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/JavaGen.dir/main.cpp.o"
+  "CMakeFiles/JavaGen.dir/javagendriver.cpp.o"
+  "CMakeFiles/JavaGen.dir/TextGen.cpp.o"
   "JavaGen.pdb"
   "JavaGen"
 )

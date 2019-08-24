@@ -123,32 +123,59 @@ JavaGen/fast:
 	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/build
 .PHONY : JavaGen/fast
 
-main.o: main.cpp.o
+TextGen.o: TextGen.cpp.o
 
-.PHONY : main.o
+.PHONY : TextGen.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/main.cpp.o
-.PHONY : main.cpp.o
+TextGen.cpp.o:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.o
+.PHONY : TextGen.cpp.o
 
-main.i: main.cpp.i
+TextGen.i: TextGen.cpp.i
 
-.PHONY : main.i
+.PHONY : TextGen.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/main.cpp.i
-.PHONY : main.cpp.i
+TextGen.cpp.i:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.i
+.PHONY : TextGen.cpp.i
 
-main.s: main.cpp.s
+TextGen.s: TextGen.cpp.s
 
-.PHONY : main.s
+.PHONY : TextGen.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/main.cpp.s
-.PHONY : main.cpp.s
+TextGen.cpp.s:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.s
+.PHONY : TextGen.cpp.s
+
+javagendriver.o: javagendriver.cpp.o
+
+.PHONY : javagendriver.o
+
+# target to build an object file
+javagendriver.cpp.o:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/javagendriver.cpp.o
+.PHONY : javagendriver.cpp.o
+
+javagendriver.i: javagendriver.cpp.i
+
+.PHONY : javagendriver.i
+
+# target to preprocess a source file
+javagendriver.cpp.i:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/javagendriver.cpp.i
+.PHONY : javagendriver.cpp.i
+
+javagendriver.s: javagendriver.cpp.s
+
+.PHONY : javagendriver.s
+
+# target to generate assembly for a file
+javagendriver.cpp.s:
+	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/javagendriver.cpp.s
+.PHONY : javagendriver.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... JavaGen"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... TextGen.o"
+	@echo "... TextGen.i"
+	@echo "... TextGen.s"
+	@echo "... javagendriver.o"
+	@echo "... javagendriver.i"
+	@echo "... javagendriver.s"
 .PHONY : help
 
 

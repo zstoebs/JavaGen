@@ -3,4 +3,4 @@ project(JavaGen)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(JavaGen main.cpp)
+add_executable(JavaGen javagendriver.cpp TextGen.cpp TextGen.h)

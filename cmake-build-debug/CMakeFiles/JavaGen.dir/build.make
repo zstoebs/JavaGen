@@ -57,30 +57,45 @@ include CMakeFiles/JavaGen.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/JavaGen.dir/flags.make
 
-CMakeFiles/JavaGen.dir/main.cpp.o: CMakeFiles/JavaGen.dir/flags.make
-CMakeFiles/JavaGen.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/JavaGen.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/JavaGen.dir/main.cpp.o -c /Users/Zachary/Desktop/Code/JavaGen/main.cpp
+CMakeFiles/JavaGen.dir/javagendriver.cpp.o: CMakeFiles/JavaGen.dir/flags.make
+CMakeFiles/JavaGen.dir/javagendriver.cpp.o: ../javagendriver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/JavaGen.dir/javagendriver.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/JavaGen.dir/javagendriver.cpp.o -c /Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp
 
-CMakeFiles/JavaGen.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaGen.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Zachary/Desktop/Code/JavaGen/main.cpp > CMakeFiles/JavaGen.dir/main.cpp.i
+CMakeFiles/JavaGen.dir/javagendriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaGen.dir/javagendriver.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp > CMakeFiles/JavaGen.dir/javagendriver.cpp.i
 
-CMakeFiles/JavaGen.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaGen.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Zachary/Desktop/Code/JavaGen/main.cpp -o CMakeFiles/JavaGen.dir/main.cpp.s
+CMakeFiles/JavaGen.dir/javagendriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaGen.dir/javagendriver.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp -o CMakeFiles/JavaGen.dir/javagendriver.cpp.s
+
+CMakeFiles/JavaGen.dir/TextGen.cpp.o: CMakeFiles/JavaGen.dir/flags.make
+CMakeFiles/JavaGen.dir/TextGen.cpp.o: ../TextGen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/JavaGen.dir/TextGen.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/JavaGen.dir/TextGen.cpp.o -c /Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp
+
+CMakeFiles/JavaGen.dir/TextGen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaGen.dir/TextGen.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp > CMakeFiles/JavaGen.dir/TextGen.cpp.i
+
+CMakeFiles/JavaGen.dir/TextGen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaGen.dir/TextGen.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp -o CMakeFiles/JavaGen.dir/TextGen.cpp.s
 
 # Object files for target JavaGen
 JavaGen_OBJECTS = \
-"CMakeFiles/JavaGen.dir/main.cpp.o"
+"CMakeFiles/JavaGen.dir/javagendriver.cpp.o" \
+"CMakeFiles/JavaGen.dir/TextGen.cpp.o"
 
 # External object files for target JavaGen
 JavaGen_EXTERNAL_OBJECTS =
 
-JavaGen: CMakeFiles/JavaGen.dir/main.cpp.o
+JavaGen: CMakeFiles/JavaGen.dir/javagendriver.cpp.o
+JavaGen: CMakeFiles/JavaGen.dir/TextGen.cpp.o
 JavaGen: CMakeFiles/JavaGen.dir/build.make
 JavaGen: CMakeFiles/JavaGen.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable JavaGen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable JavaGen"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JavaGen.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
