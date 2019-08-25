@@ -12,8 +12,6 @@
 #include <queue>
 #include <stdexcept>
 
-#define LINE_LENGTH 60
-
 ///HELPER FUNCTIONS
 
 /**
@@ -27,10 +25,11 @@ void strToLower(std::string& str);
  * @brief continuously gets tags and body text until terminated
  * @details Uses queues to store body strings and tags
  * @param <q> queue to hold tags and descriptions
+ * @param <LENGTH> line length of descriptions
  * @pre queue is passed by ref
- * @post queue contains strings of tag + descrip
+ * @post queue contains strings of tag + description
  */
-void getTags(std::queue<std::string>& q);
+void getTags(std::queue<std::string>& q, const size_t& LENGTH);
 
 /**
  * @brief Main function to execute JavaDoc generation
@@ -38,49 +37,101 @@ void getTags(std::queue<std::string>& q);
  */
 int main() {
 
-    //determining which language
-    std::string response;
-    std::cout << "Java, c++, or python? [1,2,3] -> ";
-    std::cin >> response;
-    std::cout << std::endl;
-    strToLower(response);
+    bool state = true;
+    do {
 
-    while (response != "1" &&
-    response != "2" &&
-    response != "3" &&
-    response != "java" &&
-    response != "c++" &&
-    response != "python"
-    ) {
-
-        std::cout << "Please type 1 for java, 2 for c++, 3 for python, or type the name: ";
+        //determining which language
+        std::string response;
+        std::cout << "Java, c++, or python? [1,2,3] -> ";
         std::cin >> response;
+        strToLower(response);
+        std::cout << std::endl;
 
-    }
+        while
+        (response != "1" &&
+         response != "2" &&
+         response != "3" &&
+         response != "java" &&
+         response != "c++" &&
+         response != "python"
+        ) {
 
-    std::queue<std::string> tags;
+            std::cout << "Please type 1 for java, 2 for c++, 3 for python, or type the name: ";
+            std::cin >> response;
+            strToLower(response);
+            std::cout << std::endl;
 
-    if (response == "1" ||
-    response == "2" ||
-    response == "java" ||
-    response == "c++") { //if java or c++
+        }
 
-        std::string init = "/**\n";
-        std::string term = " */";
-        getTags(tags);
+        //getting line length for descriptions
+        size_t lineLength;
+        bool first = true;
+        do {
 
-    } else if (response == "3" ||
-    response == "python") { //if python
+            if (first) {
+                std::cout << "What is the line length of the descriptions? ";
+                first = false;
+            } else {
+                std::cin.clear();
+                std::cout << "Please enter a valid line length: ";
+            }
 
-        std::string close = "\"\"\"\n";
-        getTags(tags);
+        } while (!(std::cin >> lineLength));
+        const size_t LINE_LENGTH = lineLength;
+
+        std::cout << std::endl;
+
+        //getting tags and descriptions
+        std::queue<std::string> tags;
+        if (response == "1" ||
+            response == "2" ||
+            response == "java" ||
+            response == "c++") { //if java or c++
+
+            std::string init = "/**\n";
+            std::string term = " */";
+            getTags(tags,LINE_LENGTH);
+
+            while (!tags.empty()) {
+
+                init += " * " + tags.front();
+
+            }
+            init += term;
+            std::cout << "Here's your Javadoc header!\n" << std::endl;
+            std::cout << init << std::endl;
+
+        } else if (response == "3" ||
+                   response == "python") { //if python
+
+            std::string init = "\"\"\"\n";
+            getTags(tags,LINE_LENGTH);
+
+            while (!tags.empty()) {
+
+                init += " * " + tags.front();
+
+            }
+            init += "\"\"\"";
+            std::cout << "Here's your Javadoc header!\n" << std::endl;
+            std::cout << init << std::endl;
+
+        } else {
+
+            throw std::invalid_argument("The response catching is bugged! Please notify me!");
+
+        }
+
+        std::cout << "Would you like to create another Javadoc header? [Y | N] ";
+        std::cin >> response;
+        strToLower(response);
+
+        if (response == "n" || response == "no") {
+            state = false;
+        }
 
 
-    } else {
-
-        throw std::invalid_argument("The response catching is bugged! Please notify me!");
-
-    }
+    } while(state);
 
     return 0;
 
@@ -106,10 +157,11 @@ void strToLower(std::string& str) {
  * @brief continuously gets tags and body text until terminated
  * @details Uses queues to store body strings and tags
  * @param <q> queue to hold tags and descriptions
+ * @param <LENGTH> line length of descriptions
  * @pre queue is passed by ref
- * @post queue contains strings of tag + descrip
+ * @post queue contains strings of tag + description
  */
-void getTags(std::queue<std::string>& q) {
+void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
 
     bool state = true;
     do {
@@ -134,32 +186,36 @@ void getTags(std::queue<std::string>& q) {
         std::string descrip;
         std::cout << "Enter tag description: ";
         std::cin >> descrip;
+        std::cout << std::endl;
 
         //formatting description
-        size_t i = LINE_LENGTH;
-        while (i < descrip.length()) {
+        size_t i = LENGTH-1;
+        size_t descripLength = descrip.length();
+        while (i < descripLength) {
 
-            size_t j = i;
-            while (j < descrip.length() && descrip[j] != ' ') {
-                ++j;
+
+            while (i < descripLength && descrip[i] != ' ') {
+                ++i;
             }
 
-            i = j;
-            descrip.insert(i,"\n\t");
+            if (i != descripLength-1) {
+                descrip.insert(i, "\n\t");
+            }
 
-            i += LINE_LENGTH;
+            i += LENGTH;
 
         }
 
-        std::string line = tag + " " + descrip;
+        std::string line = tag + " " + descrip + "\n";
         q.push(line);
 
-        std::string response;
+        std::string res;
         std::cout << "Would you like to enter another tag? [Y | N] ";
-        std::cin >> response;
-        strToLower(response);
+        std::cin >> res;
+        strToLower(res);
+        std::cout << std::endl;
 
-        if (response == "n" || response == "no") {
+        if (res == "n" || res == "no") {
             state = false;
         }
 
