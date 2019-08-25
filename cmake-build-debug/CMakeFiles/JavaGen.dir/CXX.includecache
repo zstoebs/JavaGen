@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp
-string
+/Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp
+cstdlib
 -
-TextGen.h
-/Users/Zachary/Desktop/Code/JavaGen/TextGen.h
-
-/Users/Zachary/Desktop/Code/JavaGen/TextGen.h
-string
--
-
-/Users/Zachary/Desktop/Code/JavaGen/main.cpp
 iostream
 -
 string
 -
-TextGen.h
-/Users/Zachary/Desktop/Code/JavaGen/TextGen.h
+queue
+-
+stdexcept
+-
 

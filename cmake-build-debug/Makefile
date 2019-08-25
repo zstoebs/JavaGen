@@ -123,33 +123,6 @@ JavaGen/fast:
 	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/build
 .PHONY : JavaGen/fast
 
-TextGen.o: TextGen.cpp.o
-
-.PHONY : TextGen.o
-
-# target to build an object file
-TextGen.cpp.o:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.o
-.PHONY : TextGen.cpp.o
-
-TextGen.i: TextGen.cpp.i
-
-.PHONY : TextGen.i
-
-# target to preprocess a source file
-TextGen.cpp.i:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.i
-.PHONY : TextGen.cpp.i
-
-TextGen.s: TextGen.cpp.s
-
-.PHONY : TextGen.s
-
-# target to generate assembly for a file
-TextGen.cpp.s:
-	$(MAKE) -f CMakeFiles/JavaGen.dir/build.make CMakeFiles/JavaGen.dir/TextGen.cpp.s
-.PHONY : TextGen.cpp.s
-
 javagendriver.o: javagendriver.cpp.o
 
 .PHONY : javagendriver.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... JavaGen"
-	@echo "... TextGen.o"
-	@echo "... TextGen.i"
-	@echo "... TextGen.s"
 	@echo "... javagendriver.o"
 	@echo "... javagendriver.i"
 	@echo "... javagendriver.s"

@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Zachary/Desktop/Code/JavaGen/TextGen.cpp">
-			<Option target="JavaGen"/>
-		</Unit>
-		<Unit filename="/Users/Zachary/Desktop/Code/JavaGen/TextGen.h">
-			<Option target="JavaGen"/>
-		</Unit>
 		<Unit filename="/Users/Zachary/Desktop/Code/JavaGen/javagendriver.cpp">
 			<Option target="JavaGen"/>
 		</Unit>
