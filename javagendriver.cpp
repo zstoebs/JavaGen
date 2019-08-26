@@ -45,6 +45,7 @@ int main() {
         std::cout << "Java, c++, or python? [1,2,3] -> ";
         std::cin >> response;
         strToLower(response);
+        std::cin.ignore();
         std::cout << std::endl;
 
         while
@@ -59,6 +60,7 @@ int main() {
             std::cout << "Please type 1 for java, 2 for c++, 3 for python, or type the name: ";
             std::cin >> response;
             strToLower(response);
+            std::cin.ignore();
             std::cout << std::endl;
 
         }
@@ -66,20 +68,11 @@ int main() {
         //getting line length for descriptions
         size_t lineLength;
         bool first = true;
-        do {
-
-            if (first) {
-                std::cout << "What is the line length of the descriptions? ";
-                first = false;
-            } else {
-                std::cin.clear();
-                std::cout << "Please enter a valid line length: ";
-            }
-
-        } while (!(std::cin >> lineLength));
-        const size_t LINE_LENGTH = lineLength;
-
+        std::cout << "What is the line length of the descriptions? ";
+        std::cin >> lineLength;
+        std::cin.ignore();
         std::cout << std::endl;
+        const size_t LINE_LENGTH = lineLength;
 
         //getting tags and descriptions
         std::queue<std::string> tags;
@@ -123,8 +116,16 @@ int main() {
         }
 
         std::cout << "Would you like to create another Javadoc header? [Y | N] ";
-        std::cin >> response;
+        std::getline(std::cin,response);
         strToLower(response);
+        std::cin.ignore();
+        while (response != "y" && response != "yes" && response != "n" && response != "no") {
+
+            std::cout << "Please type yes or no: ";
+            std::getline(std::cin,response);
+            std::cin.ignore();
+
+        }
 
         if (response == "n" || response == "no") {
             state = false;
@@ -166,17 +167,21 @@ void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
     bool state = true;
     do {
 
+        std::cin.clear();
+
         //getting and formatting tag
         std::string tag;
         std::cout << "Enter tag: ";
         std::cin >> tag;
+        std::cin.ignore();
         strToLower(tag);
         tag = "@" + tag;
-        if (tag == "param") {
+        if (tag == "@param") {
 
             std::string paramName;
             std::cout << "Whats the parameter name? ";
-            std::cin >> paramName;
+            std::getline(std::cin,paramName);
+            std::cin.ignore();
             tag += "<" + paramName + ">";
 
         }
@@ -185,14 +190,13 @@ void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
         //getting description
         std::string descrip;
         std::cout << "Enter tag description: ";
-        std::cin >> descrip;
+        std::getline(std::cin,descrip);
+        std::cin.ignore();
         std::cout << std::endl;
 
         //formatting description
-        size_t i = LENGTH-1;
         size_t descripLength = descrip.length();
-        while (i < descripLength) {
-
+        for (size_t i = LENGTH-1; i < descripLength; i += LENGTH) {
 
             while (i < descripLength && descrip[i] != ' ') {
                 ++i;
@@ -202,18 +206,26 @@ void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
                 descrip.insert(i, "\n\t");
             }
 
-            i += LENGTH;
-
         }
 
         std::string line = tag + " " + descrip + "\n";
         q.push(line);
 
         std::string res;
-        std::cout << "Would you like to enter another tag? [Y | N] ";
-        std::cin >> res;
+        std::cout << "Would you like to enter another tag? [Y | N] "; ///INFINITE LOOP ERROR HERE
+        std::getline(std::cin,res);
+        std::cin.ignore();
         strToLower(res);
         std::cout << std::endl;
+        while (res != "y" && res != "yes" && res != "n" && res != "no") {
+
+            std::cin.clear();
+            std::cout << "Please type yes or no: ";
+            std::getline(std::cin,res);
+            std::cin.ignore();
+            strToLower(res);
+
+        }
 
         if (res == "n" || res == "no") {
             state = false;
