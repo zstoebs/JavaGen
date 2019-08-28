@@ -29,7 +29,7 @@ void strToLower(std::string& str);
  * @pre queue is passed by ref
  * @post queue contains strings of tag + description
  */
-void getTags(std::queue<std::string>& q, const size_t& LENGTH);
+std::queue<std::string> getTags(const size_t& LENGTH);
 
 /**
  * @brief Main function to execute JavaDoc generation
@@ -44,10 +44,9 @@ int main() {
         std::string response;
         std::cout << "Java, c++, or python? [1,2,3] -> ";
         std::cin >> response;
-        strToLower(response);
         std::cin.ignore();
+        strToLower(response);
         std::cout << std::endl;
-
         while
         (response != "1" &&
          response != "2" &&
@@ -59,18 +58,21 @@ int main() {
 
             std::cout << "Please type 1 for java, 2 for c++, 3 for python, or type the name: ";
             std::cin >> response;
-            strToLower(response);
             std::cin.ignore();
+            strToLower(response);
             std::cout << std::endl;
 
         }
 
         //getting line length for descriptions
         size_t lineLength;
-        bool first = true;
         std::cout << "What is the line length of the descriptions? ";
-        std::cin >> lineLength;
-        std::cin.ignore();
+        while (!(std::cin >> lineLength) || lineLength > 99) {
+
+            std::cin.clear();
+            std::cout << "Please enter a valid line length less than 100: ";
+
+        }
         std::cout << std::endl;
         const size_t LINE_LENGTH = lineLength;
 
@@ -83,11 +85,12 @@ int main() {
 
             std::string init = "/**\n";
             std::string term = " */";
-            getTags(tags,LINE_LENGTH);
+            tags = getTags(LINE_LENGTH);
 
             while (!tags.empty()) {
 
                 init += " * " + tags.front();
+                tags.pop();
 
             }
             init += term;
@@ -98,11 +101,14 @@ int main() {
                    response == "python") { //if python
 
             std::string init = "\"\"\"\n";
-            getTags(tags,LINE_LENGTH);
+            tags = getTags(LINE_LENGTH);
 
             while (!tags.empty()) {
 
                 init += " * " + tags.front();
+                tags.pop();
+
+                std::cout << init << std::endl;
 
             }
             init += "\"\"\"";
@@ -116,14 +122,15 @@ int main() {
         }
 
         std::cout << "Would you like to create another Javadoc header? [Y | N] ";
-        std::getline(std::cin,response);
-        strToLower(response);
+        std::cin >> response;
         std::cin.ignore();
+        strToLower(response);
         while (response != "y" && response != "yes" && response != "n" && response != "no") {
 
             std::cout << "Please type yes or no: ";
-            std::getline(std::cin,response);
+            std::cin >> response;
             std::cin.ignore();
+            strToLower(response);
 
         }
 
@@ -162,12 +169,11 @@ void strToLower(std::string& str) {
  * @pre queue is passed by ref
  * @post queue contains strings of tag + description
  */
-void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
+std::queue<std::string> getTags(const size_t& LENGTH) {
 
     bool state = true;
+    std::queue<std::string> q;
     do {
-
-        std::cin.clear();
 
         //getting and formatting tag
         std::string tag;
@@ -180,9 +186,9 @@ void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
 
             std::string paramName;
             std::cout << "Whats the parameter name? ";
-            std::getline(std::cin,paramName);
+            std::cin >> paramName;
             std::cin.ignore();
-            tag += "<" + paramName + ">";
+            tag += " <" + paramName + "> ";
 
         }
         std::cout << std::endl;
@@ -191,47 +197,55 @@ void getTags(std::queue<std::string>& q, const size_t& LENGTH) {
         std::string descrip;
         std::cout << "Enter tag description: ";
         std::getline(std::cin,descrip);
-        std::cin.ignore();
         std::cout << std::endl;
 
-        //formatting description
         size_t descripLength = descrip.length();
+
+        //finding space before last word
+        size_t lastBlankInd;
+        for (lastBlankInd = descripLength-1; descrip[lastBlankInd] != ' '; --lastBlankInd) {}
+
+        //formatting description
         for (size_t i = LENGTH-1; i < descripLength; i += LENGTH) {
 
             while (i < descripLength && descrip[i] != ' ') {
                 ++i;
             }
 
-            if (i != descripLength-1) {
-                descrip.insert(i, "\n\t");
+            if (i <= lastBlankInd) {
+                descrip.insert(i, "\n\t\t\t");
             }
 
         }
 
-        std::string line = tag + " " + descrip + "\n";
+        std::cout << std::endl;
+
+        std::string line = tag + descrip + "\n";
         q.push(line);
 
+        std::cin.clear();
         std::string res;
-        std::cout << "Would you like to enter another tag? [Y | N] "; ///INFINITE LOOP ERROR HERE
-        std::getline(std::cin,res);
+        std::cout << "Would you like to enter another tag? [Y | N] ";
+        std::cin >> res;
         std::cin.ignore();
         strToLower(res);
-        std::cout << std::endl;
         while (res != "y" && res != "yes" && res != "n" && res != "no") {
 
-            std::cin.clear();
             std::cout << "Please type yes or no: ";
-            std::getline(std::cin,res);
+            std::cin >> res;
             std::cin.ignore();
             strToLower(res);
 
         }
+        std::cout << std::endl;
 
         if (res == "n" || res == "no") {
             state = false;
         }
 
     } while (state);
+
+    return q;
 
 }
 
