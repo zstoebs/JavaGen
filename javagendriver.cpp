@@ -16,14 +16,16 @@
 
 /**
  * @brief converts all chars in string to lowercase
- * @param str
+ * @param <str> string to convert
  * @return lowercase string
  */
 void strToLower(std::string& str);
 
 /**
  * @brief continuously gets tags and body text until terminated
- * @details Uses queues to store body strings and tags
+ * @details Uses queues to store body strings and tags, throws an
+ *          error if response catching is bugged. NOTIFY ME IF AN
+ *          ERROR IS THROWN.
  * @param <q> queue to hold tags and descriptions
  * @param <LENGTH> line length of descriptions
  * @pre queue is passed by ref
@@ -147,7 +149,7 @@ int main() {
 
 /**
  * @brief converts all chars in string to lowercase
- * @param str
+ * @param <str> string to convert
  * @return lowercase string
  */
 void strToLower(std::string& str) {
