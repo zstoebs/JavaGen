@@ -1,3 +1,0 @@
-/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Zachary/Desktop/Code/JavaGen/cmake-build-debug/CMakeFiles/JavaGen.dir

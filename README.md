@@ -1,11 +1,11 @@
-#JavaGen
+# JavaGen
 An easy Javadoc notation generator
 
 JavaGen is a fast, user-friendly command line application to generate Javadoc headers for your 
 code. Currently, Java/C++ and Python headers are supported. The only dependency is the C++ STL, 
 specifically iostream, string, size_t, queue, and exception.
 
-###Prerequisites:
+### Prerequisites:
 - Operating System
 - C++ compiler
 - CMake
@@ -13,7 +13,7 @@ specifically iostream, string, size_t, queue, and exception.
 
 **Compiler Note**: g++ works fine. Clang may or may not work.
 
-###Getting Started
+### Getting Started
 Installation:
 - Open terminal
 - Clone this repo
@@ -36,7 +36,7 @@ Usage:
   
   ```start javagen```
 
-###Acknowledgements
+### Acknowledgements
 At Vanderbilt University, CS2201 for teaching me C++ and CS3251 for inspiring to make this.
 
 [GitHub URL](https://github.com/zstoebs/JavaGen.git)
