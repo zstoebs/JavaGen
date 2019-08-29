@@ -13,6 +13,10 @@ specifically iostream, string, size_t, queue, and exception.
 
 **Compiler Note**: g++ works fine. Clang may or may not work.
 
+### Future Improvements:
+- Make it web app
+- Make it an iOS/Android app
+
 ## Getting Started
 **Installation**:
 - Open terminal
