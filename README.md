@@ -13,14 +13,14 @@ specifically iostream, string, size_t, queue, and exception.
 
 **Compiler Note**: g++ works fine. Clang may or may not work.
 
-### Getting Started
-Installation:
+## Getting Started
+**Installation**:
 - Open terminal
 - Clone this repo
 
 ```git clone https://github.com/zstoebs/JavaGen.git```
 
-Usage:
+**Usage**:
 - Open navigate to directory housing this repo on your local machine
 - Run the following command to compile to an executable
 
