@@ -17,7 +17,7 @@ specifically iostream, string, size_t, queue, and exception.
 - CMake
 - CPU
 
-**Compiler Note**: g++ works fine. Clang may or may not work.
+**Compiler Note**: Tested on g++ and clang++. 
 
 ### Future Improvements:
 - Make it a web app
@@ -34,7 +34,13 @@ specifically iostream, string, size_t, queue, and exception.
 - Navigate to directory housing this repo on your local machine on the terminal.
 - Run the following command to compile to an executable.
 
-```g++ -o javagen javagendriver.cpp```
+  - g++
+
+  ```g++ -o javagen javagendriver.cpp```
+
+  - clang++
+
+  ```clang++ -o javagen javagendriver.cpp```
 
 - Finally, run the following command to execute.
 
