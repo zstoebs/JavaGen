@@ -123,7 +123,7 @@ int main() {
 
         }
 
-        std::cout << "Would you like to create another Javadoc header? [Y | N] ";
+        std::cout << "\nWould you like to create another Javadoc header? [Y | N] ";
         std::cin >> response;
         std::cin.ignore();
         strToLower(response);
@@ -187,7 +187,7 @@ std::queue<std::string> getTags(const size_t& LENGTH) {
         if (tag == "@param") {
 
             std::string paramName;
-            std::cout << "Whats the parameter name? ";
+            std::cout << "What is the parameter name? ";
             std::cin >> paramName;
             std::cin.ignore();
             tag += " <" + paramName + "> ";
