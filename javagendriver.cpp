@@ -222,7 +222,7 @@ std::queue<std::string> getTags(const size_t& LENGTH) {
 
         std::cout << std::endl;
 
-        std::string line = tag + descrip + "\n";
+        std::string line = tag + " " + descrip + "\n";
         q.push(line);
 
         std::cin.clear();

@@ -11,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="657f86ec-e66a-44ec-bdeb-55de8589fd79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="657f86ec-e66a-44ec-bdeb-55de8589fd79" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +86,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="425" />
+    <option name="x" value="424" />
     <option name="y" value="23" />
     <option name="width" value="1014" />
     <option name="height" value="980" />
@@ -159,15 +156,15 @@
       <workItem from="1566685310027" duration="19122000" />
       <workItem from="1567009114102" duration="187000" />
       <workItem from="1567118613704" duration="4857000" />
-      <workItem from="1567183844121" duration="342000" />
+      <workItem from="1567183844121" duration="394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24508000" />
+    <option name="totallyTimeSpent" value="24560000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="425" y="23" width="1014" height="980" extended-state="0" />
+    <frame x="424" y="23" width="1014" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2170782" />
