@@ -107,7 +107,7 @@ int main() {
 
             while (!tags.empty()) {
 
-                init += " * " + tags.front();
+                init += "  " + tags.front();
                 tags.pop();
 
                 std::cout << init << std::endl;
@@ -200,6 +200,15 @@ std::queue<std::string> getTags(const size_t& LENGTH) {
         std::cout << "Enter tag description: ";
         std::getline(std::cin,descrip);
         std::cout << std::endl;
+
+        //preprocessing string to remove any newline characters
+        for (size_t i = 0; i < descrip.length(); ++i) {
+
+            if (descrip[i] == '\n') {
+                descrip.erase(i,1);
+            }
+
+        }
 
         size_t descripLength = descrip.length();
 

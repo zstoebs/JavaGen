@@ -20,6 +20,7 @@ specifically iostream, string, size_t, queue, and exception.
 **Compiler Note**: Tested on g++ and clang++. 
 
 ### Future Improvements:
+- Support for copy paste into terminal
 - Make it a web app
 - Make it an iOS/Android app
 
