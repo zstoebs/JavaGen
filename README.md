@@ -11,6 +11,9 @@ specifically iostream, string, size_t, queue, and exception.
  */
 ```
 
+### TODO:
+- Implement design patterns with existing code
+
 ### Prerequisites:
 - Operating System
 - C++ compiler
